@@ -1,9 +1,14 @@
-# أنا سأعمل نائب الرئيس بجد جدا سأفجر
+# Simple ROBLOX user info retriever via id.
 
 import requests
 
+thumbnail_url = 'https://thumbnails.roblox.com/v1/users/avatar?userIds='
 url = 'https://users.roblox.com/v1/users/'
-id = '2460812989' # Input your desired ID here
+
+id = '1' # Input your desired ID here
+size = '420x420' # Sizes: 720x720, 420x420, 352x552...
+format = 'Png' # Png or Jpeg
+is_circular = 'false' # Determines if the thumbnail is Circular or not
 
 userinfo = requests.get(url+id)
 if userinfo.status_code == 200:
@@ -13,26 +18,27 @@ if userinfo.status_code == 200:
   description = data['description']
   print(f"Username: {username}")
   print(f"Display name: {display_name}")
-  print()
   print(f"description: {description}")
-  print()
 else:
   print('Error retrieving user info')
 
 userhistory = requests.get(url+id+'/username-history')
-if userinfo.status_code == 200:
+if userhistory.status_code == 200:
   data = userhistory.json()
 else:
   print("Error retrieving username history")
 print('Past usernames:', end= ' ')
-for i, username_data in enumerate(data["data"]):
+for username_data in data["data"]:
     username = username_data["name"]
-    print(username, end= '')
-    if i < len(data["data"]) - 1:
-        print(',', end= ' ')
-
-
-        
+    print(username, end= ' ')
+    
+userthumbnail = requests.get(thumbnail_url+id+'&size='+size+'&format='+format+'&isCircular='+is_circular)
+if userthumbnail.status_code == 200:
+  data = userthumbnail.json()
+  image = data["data"][0]["imageUrl"]
+  print(image)
+else:
+  print('Error retrieving user thumbnail')
 
 
 
