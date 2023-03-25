@@ -1,4 +1,4 @@
-# A simple python program that retrieves information by ID
+# أنا سأعمل نائب الرئيس بجد جدا سأفجر
 
 import requests
 
