@@ -1,4 +1,5 @@
-# Simple ROBLOX user info retriever via ID
+# أنا سأعمل نائب الرئيس بجد جدا سأفجر
 
-How to use?
-Run the program and input your ID!
+أنا على وشك النفخ
+
+![image](https://i.kym-cdn.com/entries/icons/original/000/042/513/dreamybull.jpg)
