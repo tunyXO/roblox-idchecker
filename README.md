@@ -1,5 +1,1 @@
-# أنا سأعمل نائب الرئيس بجد جدا سأفجر
-
-أنا على وشك النفخ
-
-![image](https://i.kym-cdn.com/entries/icons/original/000/042/513/dreamybull.jpg)
+# Simple python program that retrieves ROBLOX user info via ID.
